@@ -68,6 +68,8 @@ int main() {
 
 Compila y ejecuta:
 
+> **Importante:** Abre **"Developer PowerShell for VS 2022"** desde el menú Inicio (o activa el entorno en tu terminal PowerShell con `& "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1" -Arch amd64 -HostArch amd64`). Esto carga las herramientas de MSVC necesarias para que `nvcc` pueda vincular correctamente.
+
 ```powershell
 nvcc -o hello.exe hello.cu
 ./hello.exe
