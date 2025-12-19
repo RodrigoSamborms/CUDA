@@ -1,6 +1,6 @@
 # CUDA
 
-Para instalar, revisa [Instalacion.md](Instalacion.md). Usa los pasos manuales con `nvcc` (sin CMake).
+Para instalar, revisa [Instalacion.md](Instalacion.md). Usa los pasos manuales con `nvcc` .
 
 ## Prueba rápida manual (Windows)
 
