@@ -11,13 +11,21 @@ Para instalar, revisa [Instalacion.md](Instalacion.md). Este repo incluye un pro
 
 ## Prueba rápida (Windows)
 
+> **Importante:** Abre **"Developer PowerShell for VS 2022"** desde el menú Inicio. Esto carga las herramientas de MSVC necesarias para compilar correctamente.
+
+Navega al directorio raíz del proyecto:
+
+```powershell
+cd C:\Users\<tu_usuario>\Documents\Programacion\GitHub\CUDA
+```
+
 Con Visual Studio 2022:
 
 ```powershell
 mkdir build
 cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
-./build/Release/cuda_hello.exe
+.\build\Release\cuda_hello.exe
 ```
 
 Con generator por defecto:
@@ -26,7 +34,7 @@ Con generator por defecto:
 mkdir build
 cmake -S . -B build
 cmake --build build
-./build/cuda_hello.exe
+.\build\cuda_hello.exe
 ```
 
 ## Prueba rápida (WSL Ubuntu)
