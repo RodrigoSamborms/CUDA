@@ -11,7 +11,11 @@ Para instalar, revisa [Instalacion.md](Instalacion.md). Este repo incluye un pro
 
 ## Prueba rápida (Windows)
 
-> **Importante:** Abre **"Developer PowerShell for VS 2022"** desde el menú Inicio. Esto carga las herramientas de MSVC necesarias para compilar correctamente.
+> **Importante:** Abre **"Developer PowerShell for VS 2022"** desde el menú Inicio. Esto carga las herramientas de MSVC necesarias para compilar correctamente. Si estás en un PowerShell normal, activa el entorno con:
+>
+> ```powershell
+> & "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1" -Arch amd64 -HostArch amd64
+> ```
 
 Navega al directorio raíz del proyecto:
 
