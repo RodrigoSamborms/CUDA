@@ -1,53 +1,24 @@
 # CUDA
 
-Para instalar, revisa [Instalacion.md](Instalacion.md). Este repo incluye un proyecto base mínimo para probar tu entorno CUDA 13.x.
+Para instalar, revisa [Instalacion.md](Instalacion.md). Usa los pasos manuales con `nvcc` (sin CMake).
 
-## Estructura
-- [CMakeLists.txt](CMakeLists.txt): definición del proyecto `cuda_hello`.
-- [src/hello.cu](src/hello.cu): kernel mínimo y verificación.
-- [BUILD.md](BUILD.md): instrucciones de compilación para Windows y WSL.
-- [CMakePresets.json](CMakePresets.json): presets para configurar y compilar.
-- [.vscode/tasks.json](.vscode/tasks.json): tareas de VS Code para configurar, compilar y ejecutar.
+## Prueba rápida manual (Windows)
 
-## Prueba rápida (Windows)
-
-> **Importante:** Abre **"Developer PowerShell for VS 2022"** desde el menú Inicio. Esto carga las herramientas de MSVC necesarias para compilar correctamente. Si estás en un PowerShell normal, activa el entorno con:
->
-> ```powershell
-> & "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1" -Arch amd64 -HostArch amd64
-> ```
-
-Navega al directorio raíz del proyecto:
+1) Abre **"Developer PowerShell for VS 2022"** (o en PowerShell normal ejecuta el comando de activación del entorno que se indica en Instalacion.md).
+2) Ve a la carpeta donde tengas tu fuente (por ejemplo `ejercicios` si guardaste `hola.cu` allí).
 
 ```powershell
-cd C:\Users\<tu_usuario>\Documents\Programacion\GitHub\CUDA
+cd C:\Users\<tu_usuario>\Documents\Programacion\GitHub\CUDA\ejercicios
+nvcc -o hola.exe hola.cu
+./hola.exe
 ```
 
-Con Visual Studio 2022:
+Deberías ver `CUDA OK`.
 
-```powershell
-mkdir build
-cmake -S . -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release
-.\build\Release\cuda_hello.exe
-```
-
-Con generator por defecto:
-
-```powershell
-mkdir build
-cmake -S . -B build
-cmake --build build
-.\build\cuda_hello.exe
-```
-
-## Prueba rápida (WSL Ubuntu)
+## Prueba rápida manual (WSL Ubuntu)
 
 ```bash
-mkdir -p build
-cmake -S . -B build
-cmake --build build
-./build/cuda_hello
+cd /ruta/donde/este/tu/hello
+nvcc -o hello hello.cu
+./hello
 ```
-
-Si aún se está instalando el Toolkit 13.x, usa estos comandos cuando termine y confirma que `nvcc --version` funciona.
